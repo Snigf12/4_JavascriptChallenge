@@ -1,10 +1,10 @@
-# Learning HTML - CSS
+# Adding Javascript to previous challenge
 
-Recreate, to your best ability, the following WebSite.  You should try to make it look as close to the provided graphic as possible.  Use HTML and CSS to format/place the Form, buttons, table, graphic on your website.
-You  must use a HTML form for the "Enter Course Grades" section, and a HTML Table for the list on the lower part of the page.  Try to match the colors, and layout (alignment) as best you can
-
-<p>
-    <img src="Readme - TASK.jpg">
-</p>
-
-[Page published](https://snigf12.github.io/3_CSSChallenge/) using the third folder of [code_learning repo](https://github.com/Snigf12/code_learning) using GitHub Pages.
+This challenge is to make the last page you created functional (somewhat).  The challenge is to:
+•	If the user left a field blank, JavaScript should "alert" the user and will not write anything to the Table.
+•	If JavaScript verifies that the fields contain data, then write the information to the table.  Just to avoid confusion, in this challenge, you don't add the data as a new line of the table, just overwrite the data that is currently there...
+•	You should write a JavaScript Function that will perform this task(s), you may even want to separate the field validation and table writing into separate Functions.
+Demo your working code to your instructor
+NOTE:
+If, when you write to the table, you see your update load but then revert back quickly, it's because your page is refreshing after completing the function(s).  Under the "onsubmit" call, add "return false" to prevent the reload... for example:
+<form onsubmit="validate();return false">
