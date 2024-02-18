@@ -31,6 +31,7 @@ function formFieldsfull() {
     }
     //If the array is empty, then everything is ok, so I return validation = ture
     if (missingFields.length === 0) {
+        console.log("The fields are full - true");
         return true
     } else {
         return false
@@ -94,8 +95,9 @@ function writeInTable() {
 
     } else {
         for (var key in missingFields) {
-            alertMessage += "*" + fieldMap[key] + "\n"
+            alertMessage += "*" + fieldMap[key] + "\n";
         }
-        alert(alertMessage)
+        alert(alertMessage);
+        return false
     }
 }
