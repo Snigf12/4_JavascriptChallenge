@@ -1,4 +1,4 @@
-var validation = false;
+/* Define Global Variables */
 var alertMessage = "Hi, please make sure to:\n";
 var missingFields=[];
 var fieldMap = {
@@ -8,11 +8,13 @@ var fieldMap = {
     'grade':"input a valid Grade form 0 to 100"
 }
 
+var fname = document.getElementById("fname").value;
+var lname = document.getElementById("lname").value;
+var course = document.getElementById("course").value;
+var grade = document.getElementById("grade").value; //this should be 0 to 100
+
 function formFieldsfull() {
-    var fname = document.getElementById("fname").value;
-    var lname = document.getElementById("lname").value;
-    var course = document.getElementById("course").value;
-    var grade = document.getElementById("grade").value; //this should be 0 to 100
+    var missingField=[]
     /* I check if any field is empty, and if it is I save it in
      the missingField array*/
     if (fname === "") {
@@ -80,12 +82,15 @@ function convertGrade() {
 function writeInTable() {
     if (formFieldsfull) {
         var lgrade = convertGrade()
-
-        var table = document.createElement("table");
-        table.className = "table"; // Add class "table" to the table
-
-        var headerRow = document.createElement("tr"); // Create table header row
-
+        
+        var tableRow = document.querySelector('.table tr:nth-child(2)'); // Assuming the row to update is the second row
+    
+        // Update the text content of each <td> element with the new values
+        tableRow.children[0].textContent = fname;
+        tableRow.children[1].textContent = lname;
+        tableRow.children[2].textContent = course;
+        tableRow.children[3].textContent = grade;
+        tableRow.children[4].textContent = lgrade;
 
     } else {
         for (var key in missingFields) {
@@ -94,27 +99,3 @@ function writeInTable() {
         alert(alertMessage)
     }
 }
-
-/*ChatGPT
-function updateTable(data) {
-    // Get the table element
-    var table = document.getElementById("myTable");
-
-    // Clear existing rows (excluding header row)
-    var rowCount = table.rows.length;
-    for (var i = rowCount - 1; i > 0; i--) {
-        table.deleteRow(i);
-    }
-
-    // Create and append new rows based on the data
-    data.forEach(function(rowData) {
-        var newRow = table.insertRow();
-
-        // Create and append table data (cell) elements for each data item
-        rowData.forEach(function(cellData) {
-            var newCell = newRow.insertCell();
-            newCell.textContent = cellData;
-        });
-    });
-}
-*/
