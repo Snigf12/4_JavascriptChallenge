@@ -21,7 +21,7 @@
     <!--This is the form-->
     <div class="form-container">
         <h1>Enter Course Grades</h1>
-        <form class="form">
+        <form class="form" onsubmit="return writeInTable()">
             <div class="form-item">
                 <label for="fname">First Name :&nbsp</label>
                 <input type="text" id="fname" placeholder="First Name">
@@ -67,13 +67,16 @@
                 <th>Grade</th>
                 <th>Letter Grade</th>
             </tr>
+<!-- This is going to be updated by javascript -->
+<!--
             <tr>
-                <td>Chris</th>
-                <td>Arsenault</th>
-                <td>CNET2020</th>
-                <td>95</th>
-                <td>Letter Grade</th>
+                <td>Chris</td>
+                <td>Arsenault</td>
+                <td>CNET2020</td>
+                <td>95</td>
+                <td>Letter Grade</td>
             </tr>
+    -->
         </table>
         <button class="button">Clear Text file</button>
     </div>

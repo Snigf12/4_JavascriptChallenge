@@ -7,4 +7,5 @@ This challenge is to make the last page you created functional (somewhat).  The 
 Demo your working code to your instructor
 NOTE:
 If, when you write to the table, you see your update load but then revert back quickly, it's because your page is refreshing after completing the function(s).  Under the "onsubmit" call, add "return false" to prevent the reload... for example:
+```html
 <form onsubmit="validate();return false">
