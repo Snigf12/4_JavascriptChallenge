@@ -117,7 +117,7 @@ function writeInTable() {
             //console.log(value + " is the value and " + fieldMap[value] + " is the message")
         }
         alert(alertMessage);
-        alertMessage = "Hi, please make sure to:\n";
+        alertMessage = "Hi, please make sure to:\n"; //Reset message in case the submit button is hit again.
         return false;
     }
 }
